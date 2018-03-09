@@ -1,4 +1,4 @@
-{% set version = '1.1.22' %}
+{% set version = "1.1.24" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/fastcluster_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/fastcluster/fastcluster_{{ version }}.tar.gz
-  sha256: 3f2d94490e349f738694b34e73614d813745b70a26328eb7f2711595754cd300
+  sha256: 82c939b79dbaf00c79b01f19b09a8fadb9a949397b8f65bc861c552e0485b995
 
 build:
   number: 0
