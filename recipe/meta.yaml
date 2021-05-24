@@ -1,4 +1,4 @@
-{% set version = "1.1.25" %}
+{% set version = "1.2.2" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -8,54 +8,55 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: fastcluster_{{ version }}.tar.gz
   url:
     - https://cran.r-project.org/src/contrib/fastcluster_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/fastcluster/fastcluster_{{ version }}.tar.gz
-  sha256: f3661def975802f3dd3cec5b2a1379f3707eacff945cf448e33aec0da1ed4205
+  sha256: 2e1159855e9b5acdd3121b94d4de79ecd7f46387baf4ea8557c8604c9cf93bc3
 
 build:
   merge_build_host: true  # [win]
-  number: 1004
+  number: 0
   script: R CMD INSTALL --build .
-  skip: true  # [win32]
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - posix                # [win]
-    - {{ compiler('fortran') }}        # [unix]
-    - {{ compiler('m2w64_fortran') }}  # [win]
-    - {{ compiler('c') }}        # [unix]
-    - {{ compiler('m2w64_c') }}  # [win]
-    - {{ compiler('cxx') }}        # [unix]
-    - {{ compiler('m2w64_cxx') }}  # [win]
+    - {{ compiler('c') }}              # [not win]
+    - {{ compiler('m2w64_c') }}        # [win]
+    - {{ compiler('cxx') }}            # [not win]
+    - {{ compiler('m2w64_cxx') }}      # [win]
+    - {{ posix }}filesystem        # [win]
+    - {{ posix }}make
+    - {{ posix }}sed               # [win]
+    - {{ posix }}coreutils         # [win]
+    - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
-
   run:
     - r-base
+    - {{ native }}gcc-libs         # [win]
 
 test:
   commands:
-    - $R -e "library('fastcluster')"  # [not win]
+    - $R -e "library('fastcluster')"           # [not win]
     - "\"%R%\" -e \"library('fastcluster')\""  # [win]
 
 about:
   home: http://danifold.net/fastcluster.html
-  license: BSD-2-Clause-FreeBSD OR GPL-2.0-only
+  license: BSD-2-Clause OR GPL-2.0-only
   summary: "This is a two-in-one package which provides interfaces to both R and Python. It implements fast hierarchical, agglomerative clustering routines. Part of the functionality is designed as drop-in replacement for existing routines: linkage() in the SciPy package 'scipy.cluster.hierarchy', hclust() in R's 'stats'\
     \ package, and the 'flashClust' package. It provides the same functionality with the benefit of a much faster implementation. Moreover, there are memory-saving routines for clustering of vector data, which go beyond what the existing packages provide. For information on how to install the Python files, see the file INSTALL\
     \ in the source distribution."
-  license_family: GPL2
-
+  license_family: BSD
   license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/BSD_2_clause
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
     - LICENSE
+
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - dpryan79
     - jsignell
