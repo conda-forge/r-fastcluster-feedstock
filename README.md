@@ -3,7 +3,7 @@ About r-fastcluster
 
 Home: http://danifold.net/fastcluster.html
 
-Package license: BSD-2-Clause-FreeBSD OR GPL-2.0-only
+Package license: BSD-2-Clause OR GPL-2.0-only
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-fastcluster-feedstock/blob/master/LICENSE.txt)
 
@@ -170,6 +170,5 @@ Feedstock Maintainers
 =====================
 
 * [@conda-forge/r](https://github.com/conda-forge/r/)
-* [@dpryan79](https://github.com/dpryan79/)
 * [@jsignell](https://github.com/jsignell/)
 
