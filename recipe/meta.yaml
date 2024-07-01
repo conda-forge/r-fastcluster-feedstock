@@ -1,7 +1,6 @@
 {% set version = "1.2.6" %}
 
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-fastcluster
@@ -14,8 +13,7 @@ source:
   sha256: 852a05458fb0b64497e9cf8f0182b599d1c2b1e9af03ec45f7c0c9280c1f8d19
 
 build:
-  merge_build_host: true  # [win]
-  number: 0
+  number: 1
   script: R CMD INSTALL --build .
   rpaths:
     - lib/R/lib/
@@ -24,7 +22,9 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}              # [not win]
+    - {{ stdlib("c") }}                # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
+    - {{ stdlib("m2w64_c") }}          # [win]
     - {{ compiler('cxx') }}            # [not win]
     - {{ compiler('m2w64_cxx') }}      # [win]
     - {{ posix }}filesystem        # [win]
@@ -37,7 +37,6 @@ requirements:
     - r-base
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
 
 test:
   commands:
