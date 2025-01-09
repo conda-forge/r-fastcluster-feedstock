@@ -13,8 +13,7 @@ source:
   sha256: 852a05458fb0b64497e9cf8f0182b599d1c2b1e9af03ec45f7c0c9280c1f8d19
 
 build:
-  number: 1
-  script: R CMD INSTALL --build .
+  number: 2
   rpaths:
     - lib/R/lib/
     - lib/
@@ -49,7 +48,6 @@ about:
   summary: "This is a two-in-one package which provides interfaces to both R and Python. It implements fast hierarchical, agglomerative clustering routines. Part of the functionality is designed as drop-in replacement for existing routines: linkage() in the SciPy package 'scipy.cluster.hierarchy', hclust() in R's 'stats'
     package, and the 'flashClust' package. It provides the same functionality with the benefit of a much faster implementation. Moreover, there are memory-saving routines for clustering of vector data, which go beyond what the existing packages provide. For information on how to install the Python files, see the file INSTALL
     in the source distribution."
-  license_family: BSD
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/BSD_2_clause
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
