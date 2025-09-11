@@ -13,6 +13,8 @@ Package license: BSD-2-Clause OR GPL-2.0-only
 
 Summary: This is a two-in-one package which provides interfaces to both R and Python. It implements fast hierarchical, agglomerative clustering routines. Part of the functionality is designed as drop-in replacement for existing routines: linkage() in the SciPy package 'scipy.cluster.hierarchy', hclust() in R's 'stats' package, and the 'flashClust' package. It provides the same functionality with the benefit of a much faster implementation. Moreover, there are memory-saving routines for clustering of vector data, which go beyond what the existing packages provide. For information on how to install the Python files, see the file INSTALL in the source distribution.
 
+Development: https://github.com/cran/fastcluster
+
 About r-fastcluster
 -------------------
 
@@ -21,6 +23,8 @@ Home: http://danifold.net/fastcluster.html
 Package license: BSD-2-Clause OR GPL-2.0-only
 
 Summary: This is a two-in-one package which provides interfaces to both R and Python. It implements fast hierarchical, agglomerative clustering routines. Part of the functionality is designed as drop-in replacement for existing routines: linkage() in the SciPy package 'scipy.cluster.hierarchy', hclust() in R's 'stats' package, and the 'flashClust' package. It provides the same functionality with the benefit of a much faster implementation. Moreover, there are memory-saving routines for clustering of vector data, which go beyond what the existing packages provide. For information on how to install the Python files, see the file INSTALL in the source distribution.
+
+Development: https://github.com/cran/fastcluster
 
 Current build status
 ====================
@@ -40,13 +44,6 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_r_base4.3</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1126&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-fastcluster-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_r_base4.3" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>linux_64_r_base4.4</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1126&branchName=main">
@@ -54,10 +51,10 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_r_base4.3</td>
+              <td>linux_64_r_base4.5</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1126&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-fastcluster-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_r_base4.3" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-fastcluster-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_r_base4.5" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -68,10 +65,10 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_r_base4.3</td>
+              <td>linux_aarch64_r_base4.5</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1126&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-fastcluster-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_r_base4.3" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-fastcluster-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_r_base4.5" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -82,10 +79,10 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_r_base4.3</td>
+              <td>linux_ppc64le_r_base4.5</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1126&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-fastcluster-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_r_base4.3" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-fastcluster-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_r_base4.5" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -96,10 +93,10 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_r_base4.3</td>
+              <td>osx_64_r_base4.5</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1126&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-fastcluster-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_r_base4.3" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-fastcluster-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_r_base4.5" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -110,10 +107,10 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>win_64_r_base4.3</td>
+              <td>osx_arm64_r_base4.5</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1126&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-fastcluster-feedstock?branchName=main&jobName=win&configuration=win%20win_64_r_base4.3" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-fastcluster-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_r_base4.5" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -121,6 +118,13 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1126&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-fastcluster-feedstock?branchName=main&jobName=win&configuration=win%20win_64_r_base4.4" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_r_base4.5</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1126&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-fastcluster-feedstock?branchName=main&jobName=win&configuration=win%20win_64_r_base4.5" alt="variant">
                 </a>
               </td>
             </tr>
